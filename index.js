@@ -29,7 +29,7 @@ function processFirstItem(stringList, callback) {
  * 1. What is the difference between counter1 and counter2?
  * 
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * counter 2 uses a closure as it has a global scoped
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
 */
@@ -56,15 +56,16 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
 
-    /*Code Here*/
+   return Math.floor(Math.random()*2);
 
 }
 
 /* Task 3: finalScore()
 
-Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of
+ innings and and returns the final score of the game in the form of an object.
 
 For example, 
 
@@ -76,10 +77,20 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inningNum){
+  let score = {home:0,
+    away:0}
+  for(let i = 0; i<inningNum; i++){
+    score.home += inning();
+    score.away = score.away+inning()
+   //  console.log(score);
+  }   
+ return score;
+}
 
-  /*Code Here*/
+  
 
+  
 }
 
 /* Task 4: 
@@ -103,8 +114,18 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+  function scoreboard(Innings,number) {
+  
+    let teamA = 0;
+    let teamB = 0;
+    for(let i = 1; i<= number;i++){
+      team1 += Innings();
+      team2+=Innings();
+     console.log(`Inning # ${i} : ${teamA} - ${teamB}`);
+    }   
+   return `Final Score: ${teamA} - ${teamB}`;
+  }
+  console.log(scoreboard(inning,9));
 }
 
 
