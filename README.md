@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+closure happens when a function has to reach into the global scope to identify  a variable.
 2. Study the following code, then answer the questions below.
 
 ```js
