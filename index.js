@@ -23,15 +23,23 @@ function processFirstItem(stringList, callback) {
 
 ///// M V P ///////
 
+
+
 /* Task 1: `counterMaker`
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ * In counter 2 , the variable is defined on a global scope
  * 
  * 2. Which of the two uses a closure? How can you tell?
- * counter 2 uses a closure as it has a global scoped
- * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * counter 1 uses a closure. the counter function has to reach out to countermaker to find the count variable. 
  *
+ 
+ * 
+ * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * if i waanted to keep count of different scores then i would use counter 1. counter 2 would be used if i wanted to keep track of one score.
+*/
 */
 
 // counter1 code
@@ -82,7 +90,7 @@ function finalScore(inningNum){
     away:0}
   for(let i = 0; i< inningNum; i++){
     score.home += inning();
-    score.away = score.away+inning()
+    score.away += inning()
    //  console.log(score);
   }   
  return score;
